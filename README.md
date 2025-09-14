@@ -1,1 +1,109 @@
-# my-cyber-portfolio
+# TryHackMe: Filesystem Interaction Continued
+
+**Date Completed:** September 14, 2025
+
+## Introduction
+
+This lab is a continuation of our journey into the Linux filesystem. The objective is to learn and practice a set of fundamental commands that allow us to create, move, and delete files and directories.
+
+Specifically, this write-up covers the following commands:
+
+Command	Full Name	Purpose
+touch	touch	Create a file
+mkdir	make directory	Create a folder
+cp	copy	Copy a file or folder
+mv	move	Move a file or folder
+rm	remove	Remove a file or folder
+file	file	Determine the type of a file
+
+Eksportuj do Arkuszy
+Protip: Similar to cat, we can provide full file paths (e.g., directory1/directory2/note) for all these commands.
+
+Creating Files and Folders (touch, mkdir)
+Creating files and folders on Linux is a simple process. The touch command takes one argument: the name we want to give the file. It's important to note that touch creates a blank file, which you would need to edit later with a command like echo or a text editor like nano.
+
+Creating a new file with touch
+tryhackme@linux2:~$ touch note
+
+tryhackme@linux2:~$ ls
+
+Output:
+folder1 note
+
+The process is similar for making a directory. We use the mkdir command and provide the desired name.
+
+Creating a new directory with mkdir
+tryhackme@linux2:~$ mkdir mydirectory
+
+tryhackme@linux2:~$ ls
+
+Output:
+folder1 mydirectory note
+
+Removing Files and Folders (rm)
+The rm command is used to remove files and folders.
+
+To remove a file, simply use rm followed by the file name.
+
+Using rm to remove a file
+tryhackme@linux2:~$ rm note
+
+tryhackme@linux2:~$ ls
+
+Output:
+folder1 mydirectory
+
+To remove a directory, you must include the -R (recursive) switch alongside the rm command.
+
+Using rm recursively to remove a directory
+tryhackme@linux2:~$ rm -R mydirectory
+
+tryhackme@linux2:~$ ls
+
+Output:
+folder1
+
+Copying and Moving Files and Folders (cp, mv)
+Copying Files with cp
+The cp command takes two arguments: the name of the existing file and the name for the new copy. It copies the entire contents of the existing file into the new one.
+
+Using cp to copy a file
+tryhackme@linux2:~$ cp note note2
+
+tryhackme@linux2:~$ ls
+
+Output:
+folder1 note note2
+
+Moving and Renaming Files with mv
+The mv command also takes two arguments. Rather than creating a copy, it moves or renames the file. The mv command can be used to move a file to a new folder or to rename it.
+
+Using mv to move a file
+tryhackme@linux2:~$ mv note2 note3
+
+tryhackme@linux2:~$ ls
+
+Output:
+folder1 note note3
+
+Determining File Type (file)
+The file command is essential for confirming the true nature of a file, as file extensions (like .txt) can be misleading or nonexistent. This command takes one argument.
+
+Using file to determine the contents of a file
+tryhackme@linux2:~$ file note
+
+Output:
+note: ASCII text
+
+Summary and Key Takeaways
+This lab provided a practical walkthrough of core Linux filesystem commands. We learned that:
+
+touch and mkdir are used for creating files and directories.
+
+rm is used for removing files, and requires the -R switch for directories.
+
+cp is for copying files, while mv is used for moving or renaming them.
+
+file is a crucial command for identifying a file's type and contents.
+
+This knowledge is fundamental for effective navigation and management of a Linux environment.
