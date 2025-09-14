@@ -16,8 +16,6 @@ mv	move	Move a file or folder
 rm	remove	Remove a file or folder
 file	file	Determine the type of a file
 
-Eksportuj do Arkuszy
-Protip: Similar to cat, we can provide full file paths (e.g., directory1/directory2/note) for all these commands.
 
 Creating Files and Folders (touch, mkdir)
 Creating files and folders on Linux is a simple process. The touch command takes one argument: the name we want to give the file. It's important to note that touch creates a blank file, which you would need to edit later with a command like echo or a text editor like nano.
