@@ -105,3 +105,53 @@ cp is for copying files, while mv is used for moving or renaming them.
 file is a crucial command for identifying a file's type and contents.
 
 This knowledge is fundamental for effective navigation and management of a Linux environment.
+
+
+**Date Completed:** September 17, 2025
+
+
+Linux Directory Fundamentals
+This is a summary of key Linux directories and their functions, based on the TryHackMe "Linux Fundamentals" lab.
+
+/etc
+The /etc directory is a central location for system configuration files.
+
+It stores essential system files used by the operating system.
+
+Notable files include:
+
+sudoers: Contains a list of users and groups with permission to run commands with sudo.
+
+passwd and shadow: These files manage user passwords, storing them in an encrypted format (sha512).
+
+/var
+The /var directory, short for "variable," stores data that is frequently written or accessed by services and applications.
+
+It's a main root folder on a Linux installation.
+
+Commonly stores log files in /var/log.
+
+Also stores other data not associated with a specific user, like databases.
+
+/root
+Unlike the /home directory, /root is the home directory for the "root" system user.
+
+This is the default location for the root user's personal files and configuration settings.
+
+/tmp
+The /tmp directory is a temporary, volatile folder.
+
+Its contents are cleared out when the computer is restarted, similar to how RAM works.
+
+By default, any user can write to this folder, making it a useful location for storing temporary files or scripts in a pentesting context.
+
+Key Takeaways
+This module provided an introduction to key Linux concepts:
+
+Connecting to a Linux machine using SSH.
+
+Using command flags and switches (e.g., man pages).
+
+Interacting with the filesystem and its contents.
+
+Understanding file permissions and switching users.
