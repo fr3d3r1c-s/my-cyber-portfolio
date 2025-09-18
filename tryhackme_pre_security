@@ -155,3 +155,56 @@ Using command flags and switches (e.g., man pages).
 Interacting with the filesystem and its contents.
 
 Understanding file permissions and switching users.
+
+
+**Date Completed:** September 18, 2025
+
+
+File Transfer and Web Serving Utilities
+I have successfully used several command-line tools and Python modules for file transfer and web serving. The following is a summary of the commands and their functions.
+
+Downloading Files with wget
+I learned how to download files from a remote server using the wget command. This command acts like a web browser, allowing for file retrieval over HTTP. The basic syntax is wget followed by the full URL of the file.
+
+Command: wget https://assets.tryhackme.com/additional/linux-fundamentals/part3/myfile.txt
+
+Purpose: Downloads the file myfile.txt from the specified URL.
+
+Secure File Transfer with scp
+I used Secure Copy (scp) to securely transfer files between my local machine and a remote server. This utility uses the SSH protocol for authentication and encryption. The syntax is based on a SOURCE and DESTINATION model.
+
+Copying from local to remote:
+
+Command: scp important.txt ubuntu@192.168.1.30:/home/ubuntu/transferred.txt
+
+Purpose: Transfers important.txt from the current directory to the remote server at 192.168.1.30, saving it as transferred.txt in the user's home directory.
+
+Copying from remote to local:
+
+Command: scp ubuntu@192.168.1.30:/home/ubuntu/documents.txt notes.txt
+
+Purpose: Retrieves documents.txt from the remote server and saves it as notes.txt in the current directory.
+
+Serving Files with Python's HTTPServer
+I set up a quick and easy web server using Python 3's built-in HTTPServer module. This is useful for sharing files from a specific directory. The server listens on a specified port, allowing other machines to download files from it.
+
+Starting the server:
+
+Command: python3 -m http.server
+
+Purpose: Starts a web server in the current directory on port 8000.
+
+Downloading from the server using wget:
+
+Command: wget http://10.10.250.201:8000/.flag.txt
+
+Purpose: Downloads the file .flag.txt from the Python server running on the remote machine at 10.10.250.201 on port 8000. The contents of the downloaded file are THM{HTTP_SERVER_SERVING_FILES}.
+
+Next Steps
+Explore advanced features of Python's HTTPServer by consulting its manual pages.
+
+Practice creating and downloading various file types to reinforce the learning.
+
+Investigate Updog as a more robust alternative to the simple Python server.
+
+Remember to use Ctrl + C to stop the Python web server once finished.
