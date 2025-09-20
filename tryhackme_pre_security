@@ -208,3 +208,63 @@ Practice creating and downloading various file types to reinforce the learning.
 Investigate Updog as a more robust alternative to the simple Python server.
 
 Remember to use Ctrl + C to stop the Python web server once finished.
+
+
+
+**Date Completed:** September 20, 2025
+
+
+
+Processes 101
+Processes are the programs that are running on your machine. They're managed by the kernel, and each one has a unique identifier called a PID (Process ID). PIDs are assigned sequentially, so a new process will have a PID that's one greater than the last one started. For example, if the previous process had a PID of 300, the new one will have a PID of 301.
+
+Viewing Processes
+You can view a list of running processes with the ps command. This provides a one-time snapshot of the processes associated with your current user session, along with information like the process status, CPU usage time, and command name.
+
+To see processes from all users and system processes, use ps aux.
+
+For a real-time, constantly updating view of processes and system statistics, the top command is very useful. It refreshes every 10 seconds and shows you the most resource-intensive processes.
+
+Managing Processes
+You can send signals to processes to manage their state. The kill command is used for this, followed by the PID of the process you want to affect. For example, kill 1337 would terminate the process with PID 1337.
+
+Here are some common signals:
+
+SIGTERM: Gracefully terminates a process, allowing it to perform cleanup tasks before exiting. This is the cleanest way to kill a process.
+
+SIGKILL: Forcefully terminates a process immediately, without any cleanup.
+
+SIGSTOP: Suspends a process.
+
+How Processes Start
+The OS uses namespaces to isolate processes from one another and manage resource allocation (like CPU and RAM).  Each namespace is like a "slice" of the computer's resources, and processes within that slice can't see or interact with those in other slices. This is a key security feature.
+
+When a system boots, the first process to start is the init process, which has a PID of 0. On Ubuntu systems, this is systemd. All other user-started programs and services are launched as child processes of systemd. This relationship simplifies process management for the user and the OS.
+
+Getting Processes/Services to Start on Boot
+System services like web servers or databases often need to start automatically when the system boots. The systemctl command is used to interact with the systemd process to manage these services.
+
+The basic format is systemctl [option] [service]. You can use it to:
+
+start: Manually start a service.
+
+stop: Manually stop a service.
+
+enable: Configure a service to start on boot.
+
+disable: Configure a service to not start on boot.
+
+For example, to start the Apache web server, you'd use systemctl start apache2. To make it start on boot, you'd use systemctl enable apache2.
+
+An Introduction to Backgrounding and Foregrounding
+Processes can run in one of two states: in the foreground or in the background.
+
+Foreground: A process that runs directly in your terminal, blocking it until the process completes.
+
+Background: A process that runs independently of your terminal, freeing it up for other commands.
+
+You can launch a command in the background by adding an ampersand (&) to the end of the command. For example, copy large_file &. This is great for long-running tasks like file transfers because you can continue using the terminal without waiting for the task to finish.
+
+You can also move a running foreground process to the background by pressing Ctrl + Z. This suspends the process and returns control of the terminal to you.
+
+To bring a backgrounded process back to the foreground and resume its execution, use the fg command.
