@@ -268,3 +268,56 @@ You can launch a command in the background by adding an ampersand (&) to the end
 You can also move a running foreground process to the background by pressing Ctrl + Z. This suspends the process and returns control of the terminal to you.
 
 To bring a backgrounded process back to the foreground and resume its execution, use the fg command.
+
+
+**Date Completed:** September 24, 2025
+
+
+A Guide to Cron and Apt
+This entry provides a comprehensive overview of how to manage scheduled tasks with cron and software packages with apt on a Linux system, based on the provided material.
+
+Understanding Cron and Crontabs
+The cron process is a core component of Linux that is responsible for executing scheduled tasks, also known as cron jobs. These jobs are defined within a special file called a crontab. The cron process starts during system boot and runs continuously, checking the crontabs for tasks to perform.
+
+A crontab entry has six specific values that define when and what an action is executed:
+
+Value	Description
+MIN	The minute to execute at
+HOUR	The hour to execute at
+DOM	The day of the month to execute at
+MON	The month of the year to execute at
+DOW	The day of the week to execute at
+CMD	The command to be executed
+
+
+The formatting can be simple, such as using an asterisk (*) as a wildcard for fields where the value doesn't matter.
+
+Example:
+To back up the "Documents" folder of a user named "cmnatic" every 12 hours, you would use the following format:
+0 */12 * * * cp -R /home/cmnatic/Documents /var/backups/
+
+You can edit your crontab by using the command crontab -e and selecting a text editor like Nano.
+
+Managing Software with Apt and Repositories
+Software for a Linux system is often stored in apt repositories. These are central locations where developers can submit their programs for community use. The apt command is a powerful tool used to manage these packages.
+
+The integrity of the software you download is ensured by GPG (Gnu Privacy Guard) keys. Your system trusts these keys, and if a package's key doesn't match, the software will not be installed.
+
+Adding a Repository Manually
+Although you can use the add-apt-repository command, you can also manually add a repository by following these steps:
+
+Add the GPG key to your trusted list.
+
+Create a new file with a .list extension in the /etc/apt/sources.list.d directory.
+
+Add the repository information to this new file.
+
+Run apt update to make your system aware of the new repository.
+
+Install the new software using apt install [software-name].
+
+Removing a Repository
+To remove a repository, you can either use the add-apt-repository --remove command or simply delete the .list file you created. After removing the repository file, you can uninstall the software using apt remove [software-name].
+
+System Logging
+System logs are located in the /var/log directory and contain important information about the applications and services running on your machine. These logs, which are automatically managed, are crucial for monitoring system health and investigating issues. For instance, web servers like Apache2 use an access log to record every user request and an error log to store information about any problems.
