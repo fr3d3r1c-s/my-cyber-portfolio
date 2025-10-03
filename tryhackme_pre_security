@@ -319,5 +319,41 @@ Install the new software using apt install [software-name].
 Removing a Repository
 To remove a repository, you can either use the add-apt-repository --remove command or simply delete the .list file you created. After removing the repository file, you can uninstall the software using apt remove [software-name].
 
+
+
+**Date Completed:** October 03, 2025
+
+
+
+This entry covers the key concepts and tools explored in Part 2 of the Windows Fundamentals module, focusing on essential system management and configuration utilities within the Windows operating system.
+
+📝 Overview
+Module: Windows Fundamentals 2
+
+Focus: Advanced Windows system management, configuration, and monitoring tools.
+
+Duration: ≈ 30 minutes (Estimated room time)
+
+🛠️ Key Topics & Tasks Covered
+The room walked through several fundamental Windows tools, many of which can be launched from the System Configuration utility (MSConfig), but also directly via shortcuts or the Start Menu.
+
+Task #	Topic	Description & Key Tools/Concepts
+1	Introduction	Overview of the module's focus.
+2	System Configuration	Exploring MSConfig for system startup, boot, services, and tool management.
+3	Change UAC Settings	Understanding and modifying User Account Control (UAC) settings and their security implications.
+4	Computer Management	Utilizing the Computer Management console (MMC) for administrative tasks like Device Manager, Disk Management, and Event Viewer.
+5	System Information	Using the System Information utility to view detailed hardware and software configuration data.
+6	Resource Monitor	Monitoring real-time system performance for CPU, Disk, Network, and Memory usage.
+7	Command Prompt	Basic command-line usage and accessing system utilities via the prompt.
+8	Registry Editor	Introduction to the Windows Registry, its hierarchical structure, and how to safely navigate/edit keys and values.
+9	Conclusion	Summary and reminder that the covered tools are a subset of those available via MSConfig, and that direct shortcuts/commands are more efficient for launching them.
+
+Eksportuj do Arkuszy
+💡 Conclusion Highlights
+MSConfig is a Launcher: The System Configuration utility acts as a central location to launch many administrative and troubleshooting tools.
+
+Efficiency: For everyday use, it's more efficient to use direct commands (e.g., resmon, regedit), shortcuts, or the Start Menu search rather than going through MSConfig.
+
+Exploration: Some tools in MSConfig were not covered, encouraging further self-exploration (or were covered in Windows Fundamentals 1).
 System Logging
 System logs are located in the /var/log directory and contain important information about the applications and services running on your machine. These logs, which are automatically managed, are crucial for monitoring system health and investigating issues. For instance, web servers like Apache2 use an access log to record every user request and an error log to store information about any problems.
