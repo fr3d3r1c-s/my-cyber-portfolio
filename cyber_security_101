@@ -1,1 +1,28 @@
+Cyber Security 101: Information Evaluation and Search Techniques
+This entry summarizes fundamental skills for effective learning and investigation in cybersecurity: evaluating information sources and utilizing advanced search techniques (OSINT fundamentals).
 
+1. Evaluating Information Sources
+When consuming information online (blogs, articles, wikis, etc.), rigorous evaluation is crucial as anyone can publish claims. Consider the following criteria:
+
+Criterion	Description
+Source	Identify the author or organization. Is the source reputable and authoritative on the subject?
+Evidence & Reasoning	Are claims backed by credible evidence and logical reasoning? Look for hard facts, not just opinions.
+Objectivity & Bias	Is the information presented impartially? Be wary of authors pushing a hidden agenda (e.g., product promotion, attacking a rival).
+Corroboration	Validate the central claims by checking them against multiple independent, reliable sources.
+
+
+⚠️ A cryptographic method or product considered bogus or fraudulent is often referred to as snake oil.
+
+2. Advanced Search Operators (OSINT)
+Internet search engines like Google, Bing, and DuckDuckGo support advanced search operators to refine queries and conduct more effective investigations (a key part of OSINT - Open-Source Intelligence).
+
+Key Google Search Operators
+Operator	Syntax	Purpose	Example
+Exact Phrase	"phrase"	Finds pages containing the exact word or phrase.	"passive reconnaissance"
+Site	site:domain.com	Limits the search to a specific domain name.	site:tryhackme.com success stories
+Omit Word	-word	Excludes search results that contain a particular word.	pyramids -tourism
+File Type	filetype:ext	Searches specifically for files of a given type (e.g., pdf, doc, ppt).	filetype:pdf cyber warfare report
+
+Eksportuj do Arkuszy
+3. Command Line Utilities
+The Linux command ss (which stands for socket statistics) is the modern utility that replaces the older netstat command for displaying network connections and socket information.
