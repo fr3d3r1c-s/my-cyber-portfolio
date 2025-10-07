@@ -357,3 +357,69 @@ Efficiency: For everyday use, it's more efficient to use direct commands (e.g., 
 Exploration: Some tools in MSConfig were not covered, encouraging further self-exploration (or were covered in Windows Fundamentals 1).
 System Logging
 System logs are located in the /var/log directory and contain important information about the applications and services running on your machine. These logs, which are automatically managed, are crucial for monitoring system health and investigating issues. For instance, web servers like Apache2 use an access log to record every user request and an error log to store information about any problems.
+
+
+
+
+**Date Completed:** October 07, 2025
+
+
+
+Windows Security Fundamentals (TryHackMe Summary)
+This entry summarizes key concepts around built-in Windows security tools, focusing on Virus & threat protection, Firewall & network protection, and other core security features.
+
+1. Virus & Threat Protection
+Windows Defender Antivirus is divided into Current threats and Virus & threat protection settings.
+
+Scan Options (Current Threats)
+Quick scan: Checks common threat locations.
+
+Full scan: Checks all files and running programs on the hard disk (can be lengthy).
+
+Custom scan: User-defined files and locations to check.
+
+Threat History: Tracks Last scan, Quarantined threats (isolated), and Allowed threats (use with extreme caution).
+
+Protection Settings
+Real-time protection: Locates and stops malware from installing/running.
+
+Cloud-delivered protection: Faster protection with access to the latest data in the cloud.
+
+Automatic sample submission: Sends files to Microsoft for threat analysis.
+
+Controlled folder access (CFA): Protects files/folders from unauthorized changes (key for Ransomware protection).
+
+Exclusions: Items Windows Defender won't scan (use with extreme caution).
+
+2. Firewall & Network Protection
+A firewall controls what network traffic (via ports) is allowed to enter or exit a device. It acts as a security guard for the system's network access.
+
+Firewall Profiles
+Windows Firewall offers three profiles, each corresponding to a different network environment:
+
+Profile	Description
+Domain	Applies to networks where the host authenticates to a domain controller.
+Private	Used for private or home networks (user-assigned).
+Public	The default for unsecured networks like Wi-Fi hotspots (e.g., coffee shops).
+
+Eksportuj do Arkuszy
+Tip: You can open the Windows Defender Firewall with Advanced Security via the command WF.msc.
+
+3. Other Core Security Features
+Trusted Platform Module (TPM)
+A secure crypto-processor (chip) designed to provide hardware-based, security-related functions, making it tamper-resistant.
+
+Essential for enhanced protection with features like BitLocker.
+
+BitLocker
+BitLocker Drive Encryption is a data protection feature that integrates with the OS to address threats from lost or stolen computers.
+
+Provides the best protection when used with a TPM.
+
+Core Isolation
+Memory Integrity: Prevents attacks from injecting malicious code into high-security processes.
+
+Volume Shadow Copy Service (VSS)
+Coordinates the creation of a consistent shadow copy (snapshot) of data for backup/restore purposes.
+
+Security Note: Malware writers often delete these files to prevent system recovery from attacks (e.g., ransomware), emphasizing the need for offline/off-site backups.
